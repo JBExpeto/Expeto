@@ -1,6 +1,9 @@
 import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
+import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import { Table } from '@nextui-org/react'
+import React from 'react'
+import {useRouter} from 'next/router'
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -34,10 +37,13 @@ export const getServerSideProps: GetServerSideProps<
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
+    const router = useRouter();
+
   return (
     <div className="container">
       <Head>
-        <title>index</title>
+        <title>마이페이지</title>
       </Head>
       <div className="container1">
         <header className="Header">
@@ -45,14 +51,44 @@ export default function Home({
             <h1>EXPETO</h1>
           </div>
           <nav className="Nav">
-            <a href="/posts/login">로그인</a>
-            <a href="/posts/register">회원가입</a>
+            <a href="/posts/registerModi">회원수정</a>
+            <a href="/" onClick={() => confirm('로그아웃 하시겠습니까?')}>로그아웃</a>
           </nav>
         </header>
-        <main>
-          <p className="mainH">EXPETO 란?</p>
-          <p className="mainP">QR코드를 통해 분실물을 찾는 사이트</p>
-        </main>
+        <h1 className="mainP">내 물품</h1>
+        <div>
+          <Table>
+            <Table.Header>
+              <Table.Column width={150}>사진</Table.Column>
+              <Table.Column width={130}>일련번호</Table.Column>
+              <Table.Column width={100}>이름</Table.Column>
+              <Table.Column width={100}>유형</Table.Column>
+              <Table.Column width={100}>제조사</Table.Column>
+              <Table.Column width={100}>가격</Table.Column>
+              <Table.Column width={130}>색상</Table.Column>
+              <Table.Column width={130}>QR</Table.Column>
+              <Table.Column width={90}>수정</Table.Column>
+              <Table.Column width={90}>삭제</Table.Column>
+              <Table.Column>신고</Table.Column>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell>사진</Table.Cell>
+                <Table.Cell>일련번호</Table.Cell>
+                <Table.Cell>이름</Table.Cell>
+                <Table.Cell>유형</Table.Cell>
+                <Table.Cell>제조사</Table.Cell>
+                <Table.Cell>가격</Table.Cell>
+                <Table.Cell>색상</Table.Cell>
+                <Table.Cell>QR</Table.Cell>
+                <Table.Cell><input className="Button2" type="button" value="수정" onClick={()=>router.push('/posts/itemModi')}></input></Table.Cell>
+                <Table.Cell><input className="Button2" type="button" value="삭제" onClick={() => confirm('목록에서 삭제하시겠습니까?')}></input></Table.Cell>
+                <Table.Cell><input className="Button2" type="button" value="신고" onClick={()=>router.push('/posts/itemSOS')}></input></Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+        </div>
+        <input className="Button" type="button" value="등록" onClick={()=>router.push('/posts/itemRegister')}></input>
         <footer className="Footer">
           <div className="bottom">
             <a href="#">EXPETO란?</a>
@@ -62,10 +98,9 @@ export default function Home({
           </div>
         </footer>
       </div>  
-      
 
       <style jsx>{`
-      .container1{
+       .container1{
         margin:0 auto;  /* 화면 중앙에 배치 */
         width:1200px;    /* 너비 */    
         background-color: #fff;
@@ -73,7 +108,7 @@ export default function Home({
       .Header{
         width:100%;    /*  너비 */
         height:100px;   /* 높이 */ 
-        background-color: gray;
+        background-color: green;
       }
       .logo{
         float:left; /* 왼쪽으로 플로팅 */ 
@@ -81,15 +116,15 @@ export default function Home({
         height:100px; /* 높이 */
         line-height:100px; /* 세로로 중간에 맞춤 - 줄간격을 높이 값과 같게 */
         padding-left:20px; /* 왼쪽에 여백 */
-        background-color:darkgrey;
+        background-color:limegreen;
       }
       .logo h1{
         font-family:Verdana, Geneva, Tahoma, sans-serif;
         font-size:50px;   /* 글자 크기 */
         color:#fff;   /* 글자 색*/
         margin: 0;
-        margin-left: 5px;
         margin-top: 10px;
+        margin-left: 5px;
       }
       .Nav{
         float:right;
@@ -105,18 +140,7 @@ export default function Home({
         font-size: 20px;
         font-weight:600;  /* 글자 굵기 */
       }
-     .mainH{
-      text-align: center;
-      margin-top: 40px;
-      font-size: 50px;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
-     }
-     .mainP{
-      text-align: center;
-      margin-top: 40px;
-      font-size: 20px;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
-     }
+    
       .Footer{
         width:1200px;   /* 너비 */
         height:1px;  /* 높이 */
@@ -133,6 +157,31 @@ export default function Home({
         margin-right: 20px;
         text-decoration: none;
         color: #666;
+      }
+      .mainP{
+        margin-top: 200px;
+        font-size: 30px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .Button{
+        width:100px;
+        height:50px;
+        font-size:20px;
+        background-color:green;
+        border-color:green;
+        border-radius: 15px;
+        color: white;
+        margin-top: 50px;
+        margin-left: 550px;
+    }
+      .Button2{
+        width:50px;
+        height:30px;
+        background-color:green;
+        border-color:green;
+        font-size:15px;
+        border-radius: 15px;
+        color: white;
       }
       `}</style>
 
