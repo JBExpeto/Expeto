@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import { useRouter } from 'next/router';
+import React from 'react'
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -34,6 +36,9 @@ export const getServerSideProps: GetServerSideProps<
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
+  const router = useRouter();
+
   return (
     <div className="container">
       <Head>
@@ -71,6 +76,7 @@ export default function Home({
                         </select>
                     </div>
                     <input className="Button" type="submit" value="회원가입" onClick={() => confirm('회원가입 하시겠습니까?')}></input>
+                    <input className="Button2" type="button" value="홈으로" onClick={()=>router.push('/')}></input>
                 </form>
             </div>
 
@@ -123,17 +129,29 @@ export default function Home({
         height: 35px;
     }
     .Button{
-        width:100px;
-        height:50px;
-        font-size:20px;
-        background-color:dimgray;
-        border-color:dimgray;
-        border-radius: 15px;
-        color: white;
-        margin-top: 40px;
-        margin-bottom: 50px;
-        margin-left: 550px;
-    }
+      width:100px;
+      height:50px;
+      font-size:20px;
+      background-color:dimgray;
+      border-color:dimgray;
+      border-radius: 15px;
+      color: white;
+      margin-top: 40px;
+      margin-bottom: 50px;
+      margin-left: 495px;
+  }
+  .Button2{
+    width:100px;
+    height:50px;
+    font-size:20px;
+    background-color:dimgray;
+    border-color:dimgray;
+    border-radius: 15px;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
       `}</style>
 
   <style jsx global>{`

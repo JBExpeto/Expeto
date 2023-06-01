@@ -51,7 +51,7 @@ export default function Home({
                 <h3 className="logo1">주소: 중부대학교</h3>
                 <h3 className="logo2">연락처: 02-XXX-XXXX</h3>
              </div>
-             <input className="Button" type="button" value="이전" onClick={()=>router.push('/posts/QRcheck')}></input>
+             <input className="Button" type="button" value="홈으로" onClick={()=>router.push('/posts/QRcheck')}></input>
 
       <style jsx>{`
        .container1{
