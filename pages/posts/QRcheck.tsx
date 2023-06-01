@@ -1,6 +1,9 @@
 import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
+import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import React from 'react'
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -34,38 +37,36 @@ export const getServerSideProps: GetServerSideProps<
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
+    const router = useRouter();
+
   return (
     <div className="container">
       <Head>
-        <title>index</title>
+        <title>분실 신고</title>
       </Head>
       <div className="container1">
-        <header className="Header">
-          <div className="logo">
-            <h1>EXPETO</h1>
-          </div>
-          <nav className="Nav">
-            <a href="/posts/login">로그인</a>
-            <a href="/posts/register">회원가입</a>
-          </nav>
-        </header>
-        <main>
-          <p className="mainH">EXPETO 란?</p>
-          <p className="mainP">QR코드를 통해 분실물을 찾는 사이트</p>
-        </main>
-        <footer className="Footer">
-          <div className="bottom">
-            <a href="#">EXPETO란?</a>
-            <a href="#">이용약관</a>
-            <a href="#">개인정보처리방침</a>
-            <a href="#">고객센터</a>
-          </div>
-        </footer>
-      </div>  
-      
+                <header className="Header">
+                    <div className="logo">
+                         <h1>EXPETO</h1>
+                    </div>
+                    <nav className="Nav">
+                        <a href="/posts/login">로그인</a>
+                    </nav>
+                </header>
+                <main>
+                    <h1 className="mainH">분실물을 습득하였습니다.</h1>
+                    <div className="image">
+                        <Image src="/path/to/your/image.jpg" alt="lostimage" width={500} height={300} />
+                    </div>
+                    <p className="mainP">분실물 습득 시 010-1111-1111로 연락주세요.</p>
+                    <input className="Button" type="button" value="분실 신고" onClick={() => confirm('분실물 발견 신고를 하시겠습니까?')}></input>
+                    <input className="Button2" type="button" value="분실물 센터" onClick={()=>router.push('/posts/centerInfo')}></input>
+                </main>
+            </div>  
 
       <style jsx>{`
-      .container1{
+       .container1{
         margin:0 auto;  /* 화면 중앙에 배치 */
         width:1200px;    /* 너비 */    
         background-color: #fff;
@@ -73,7 +74,7 @@ export default function Home({
       .Header{
         width:100%;    /*  너비 */
         height:100px;   /* 높이 */ 
-        background-color: gray;
+        background-color:blue;
       }
       .logo{
         float:left; /* 왼쪽으로 플로팅 */ 
@@ -81,15 +82,15 @@ export default function Home({
         height:100px; /* 높이 */
         line-height:100px; /* 세로로 중간에 맞춤 - 줄간격을 높이 값과 같게 */
         padding-left:20px; /* 왼쪽에 여백 */
-        background-color:darkgrey;
+        background-color:cornflowerblue;
       }
       .logo h1{
         font-family:Verdana, Geneva, Tahoma, sans-serif;
         font-size:50px;   /* 글자 크기 */
         color:#fff;   /* 글자 색*/
         margin: 0;
-        margin-left: 5px;
         margin-top: 10px;
+        margin-left: 5px;
       }
       .Nav{
         float:right;
@@ -99,41 +100,44 @@ export default function Home({
         padding-left: 700px;
       }
       .Nav a{
-        margin-right: 20px;
+        margin-left: 90px;
         text-decoration: none;
         color: #fff;
         font-size: 20px;
         font-weight:600;  /* 글자 굵기 */
       }
-     .mainH{
-      text-align: center;
-      margin-top: 40px;
-      font-size: 50px;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
+     .mainH, .mainP{
+        text-align: center;
+        margin: 40px;
      }
-     .mainP{
-      text-align: center;
-      margin-top: 40px;
-      font-size: 20px;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
+     .image{
+        margin-left: 420px;
      }
-      .Footer{
-        width:1200px;   /* 너비 */
-        height:1px;  /* 높이 */
-        margin-top: 100px;
-        background-color: black;
-      }
-      .bottom{
-        width:100%;
-        height:30px;
-        padding-top: 20px;
-        padding-left: 15px;
-      }
-      .bottom a{
-        margin-right: 20px;
-        text-decoration: none;
-        color: #666;
-      }
+     .Button{
+        width:110px;
+        height:50px;
+        font-size:20px;
+        background-color:cornflowerblue;
+        border-color:cornflowerblue;
+        border-radius: 15px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        margin-left: 480px;
+    }
+    .Button2{
+        width:110px;
+        height:50px;
+        font-size:20px;
+        background-color:cornflowerblue;
+        border-color:cornflowerblue;
+        border-radius: 15px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        margin-left: 20px;
+    }
+    
       `}</style>
 
   <style jsx global>{`
