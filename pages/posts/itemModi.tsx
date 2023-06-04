@@ -3,6 +3,7 @@ import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import React from 'react'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -37,6 +38,8 @@ export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
+  const router = useRouter();
+
   return (
     <div className="container">
       <Head>
@@ -53,7 +56,7 @@ export default function Home({
                         <Image src="/path/to/your/image.jpg" alt="lostimage" width={500} height={300} />
                     </div>
                     <div>
-                        <input className="Button" type="button" value="사진"></input>
+                    <input className="photoButton" type="button" value="사진"></input>
                     </div>
                     <p className="nameP"><strong>물품명</strong></p>
                     <div className="inputBox">
@@ -101,6 +104,7 @@ export default function Home({
                         <textarea className="etc" cols={32} rows={8} placeholder="ex) 010-0000-0000로 연락해주세요."></textarea>
                     </div>
                     <input className="Button" type="submit" value="등록" onClick={() => confirm('등록 하시겠습니까?')}></input>
+                    <input className="Button2" type="button" value="홈으로" onClick={()=>router.push('/posts/main')}></input>
                 </form>
             </div>
 
@@ -153,17 +157,41 @@ export default function Home({
         height: 35px;
     }
     .Button{
-        width:100px;
-        height:50px;
-        font-size:20px;
-        background-color:green;
-        border-color:green;
-        border-radius: 15px;
-        color: white;
-        margin-top: 40px;
-        margin-bottom: 30px;
-        margin-left: 550px;
-    }
+      width:100px;
+      height:50px;
+      font-size:20px;
+      background-color:green;
+      border-color:green;
+      border-radius: 15px;
+      color: white;
+      margin-top: 40px;
+      margin-bottom: 50px;
+      margin-left: 495px;
+  }
+  .Button2{
+    width:100px;
+    height:50px;
+    font-size:20px;
+    background-color:green;
+    border-color:green;
+    border-radius: 15px;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+.photoButton{
+  width:100px;
+  height:50px;
+  font-size:20px;
+  background-color:green;
+  border-color:green;
+  border-radius: 15px;
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  margin-left: 550px;
+}
     .image{
         margin-left: 430px;
         margin-top: 20px;

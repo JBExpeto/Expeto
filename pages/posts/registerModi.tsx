@@ -2,6 +2,7 @@ import Head from 'next/head'
 import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import React from 'react'
+import { useRouter } from 'next/router';
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -36,6 +37,8 @@ export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
+    const router = useRouter();
+
   return (
     <div className="container">
       <Head>
@@ -60,6 +63,7 @@ export default function Home({
                         <input className="tel" type="tel" placeholder="010-0000-0000" required></input>
                     </div>
                     <input className="Button" type="submit" value="수정" onClick={() => confirm('회원수정 하시겠습니까?')}></input>
+                    <input className="Button2" type="button" value="홈으로" onClick={()=>router.push('/posts/main')}></input>
                 </form>
             </div>
 
@@ -114,8 +118,20 @@ export default function Home({
         color: white;
         margin-top: 40px;
         margin-bottom: 50px;
-        margin-left: 550px;
+        margin-left: 495px;
     }
+    .Button2{
+      width:100px;
+      height:50px;
+      font-size:20px;
+      background-color:green;
+      border-color:green;
+      border-radius: 15px;
+      color: white;
+      margin-top: 40px;
+      margin-bottom: 50px;
+      margin-left: 10px;
+  }
       `}</style>
 
   <style jsx global>{`
