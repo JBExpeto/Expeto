@@ -44,7 +44,7 @@ export default function Home({
       <Head>
         <title>로그인</title>
       </Head>
-      <div className="container">
+      <div className="container1">
                 <header className="Header"></header>
                 <div className="logo">
                     <p>LOGIN</p>
@@ -107,7 +107,7 @@ export default function Home({
         margin-top: 30px;
         color:#666;
         font-weight: 30px;
-        margin-left: 600px;
+        margin-left: 430px;
     }
     .id, .pwd{
         border-radius: 10px;
@@ -140,7 +140,7 @@ export default function Home({
         color: white;
         margin-top: 40px;
         margin-bottom: 50px;
-        margin-left: 665px;
+        margin-left: 500px;
     }
     .Button2{
       width:100px;

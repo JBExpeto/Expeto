@@ -55,7 +55,7 @@ export default function Home({
                     </nav>
                 </header>
                 <main>
-                    <h1 className="mainH">분실물을 습득하였습니다.</h1>
+                    <h1 className="mainH">분실물 획득!</h1>
                     <div className="image">
                         <Image src="/path/to/your/image.jpg" alt="lostimage" width={500} height={300} />
                     </div>
