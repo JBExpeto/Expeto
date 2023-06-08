@@ -3,6 +3,7 @@ import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import React from 'react'
 import {useRouter} from 'next/router'
+import { Map, MapMarker,  } from "react-kakao-maps-sdk"
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -45,71 +46,86 @@ export default function Home({
         <title>분실물 센터 정보</title>
       </Head>
       <div className="container1"></div>
-            <header className="Header"></header>
-            <div className="logo">
-                <p>분실물 센터</p>
-                <h3 className="logo1">주소: 중부대학교</h3>
-                <h3 className="logo2">연락처: 02-XXX-XXXX</h3>
-             </div>
-             <input className="Button" type="button" value="홈으로" onClick={()=>router.push('/posts/QRcheck')}></input>
+      <header className="Header"></header>
+      <div className="logo">
+        <p>분실물 센터</p>
+        <h3 className="logo1">주소: 중부대학교</h3>
+        <h3 className="logo2">연락처: 02-XXX-XXXX</h3>
+      </div>
+      <div>
+        <Map
+          center={{ lat: 33.5563, lng: 126.79581 }}
+          style={{ width: '100%', height: '360px' }}
+        >
+          <MapMarker position={{ lat: 33.55635, lng: 126.795841 }}>
+            <div style={{ color: '#000' }}>Hello World!</div>
+          </MapMarker>
+        </Map>
+      </div>
+      <input
+        className="Button"
+        type="button"
+        value="홈으로"
+        onClick={() => router.push('/posts/QRcheck')}
+      ></input>
 
       <style jsx>{`
-       .container1{
-        margin:0 auto;  /* 화면 중앙에 배치 */
-        width:1200px;    /* 너비 */    
-        background-color: #fff;
-    }
-    .Header{
-        background-color: blue;
-        height:50px;   /* 높이 */ 
-    }
-    .logo{
-        margin-top:70px;
-    }
-    .logo p{
-        font-size: 45px;
-        text-align: center;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-    }
-    .logo1{
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-        margin-top: 60px;
-        text-align: center;
-    }
-    .logo2{
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-        text-align: center;
-    }
-    .Button{
-        width:100px;
-        height:50px;
-        font-size:20px;
-        background-color:cornflowerblue;
-        border-color:cornflowerblue;
-        border-radius: 15px;
-        color: white;
-        margin-top: 40px;
-        margin-bottom: 50px;
-        margin-left: 720px;
-    }
+        .container1 {
+          margin: 0 auto; /* 화면 중앙에 배치 */
+          width: 1200px; /* 너비 */
+          background-color: #fff;
+        }
+        .Header {
+          background-color: blue;
+          height: 50px; /* 높이 */
+        }
+        .logo {
+          margin-top: 70px;
+        }
+        .logo p {
+          font-size: 45px;
+          text-align: center;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .logo1 {
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          margin-top: 60px;
+          text-align: center;
+        }
+        .logo2 {
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          text-align: center;
+        }
+        .Button {
+          width: 100px;
+          height: 50px;
+          font-size: 20px;
+          background-color: cornflowerblue;
+          border-color: cornflowerblue;
+          border-radius: 15px;
+          color: white;
+          margin-top: 40px;
+          margin-bottom: 50px;
+          margin-left: 720px;
+        }
       `}</style>
 
-  <style jsx global>{`
+      <style jsx global>{`
         html,
         body {
-            padding: 0;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-              sans-serif;
-          }
+          padding: 0;
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+        }
 
         * {
-        margin:0;   /* 마진 리셋 */
-        padding:0;   /* 패딩 리셋 */
-        box-sizing: border-box;   /* 박스 영역은 테두리까지 */ 
+          margin: 0; /* 마진 리셋 */
+          padding: 0; /* 패딩 리셋 */
+          box-sizing: border-box; /* 박스 영역은 테두리까지 */
         }
       `}</style>
     </div>
-  )
+  );
 }
