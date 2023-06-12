@@ -1,12 +1,17 @@
-import type { AppProps } from "next/app";
-import { NextUIProvider } from '@nextui-org/react';
+import { SessionProvider } from 'next-auth/react'
 
-function MyApp({ Component, pageProps }: AppProps) {
+import type { AppProps } from 'next/app'
+import type { Session } from 'next-auth'
+
+// Use of the <SessionProvider> is mandatory to allow components that call
+// `useSession()` anywhere in your application to access the `session` object.
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps<{ session: Session }>) {
   return (
-      <NextUIProvider>
-        <Component {...pageProps} />
-      </NextUIProvider>
-  );
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  )
 }
-
-export default MyApp;
