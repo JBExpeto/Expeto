@@ -1,11 +1,7 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
-import React from 'react'
-import Link from 'next/link'
-import { signIn, signOut, useSession } from 'next-auth/react'
-import type { ReactNode } from 'react'
-import packageJSON from '../package.json'
+
 type ConnectionStatus = {
   isConnected: boolean
 }
@@ -55,12 +51,7 @@ export default function Home({
         </header>
         <main>
           <p className="mainH">EXPETO 란?</p>
-          <p className="mainP">
-            안녕하세요, Expeto란 라틴어로 '찾다' 라는 뜻과 Ex : 타인 peto : 찾다
-            라는 의미를 가져 타인이 찾아준다는 뜻으로 물품을 대행해서 찾아주고
-            관리해주는 서비스를 뜻 합니다. 여러분의 소중한 물품을 저희 Expeto에
-            맡겨주세요!{' '}
-          </p>
+          <p className="mainP">QR코드를 통해 분실물을 찾는 사이트</p>
         </main>
         <footer className="Footer">
           <div className="bottom">

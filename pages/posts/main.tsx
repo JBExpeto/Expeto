@@ -68,6 +68,13 @@ export default function Home({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter()
 
+    const handleButtonClick = () => {
+      const result = window.confirm('로그아웃 하시겠습니까?');
+      if(result){
+        router.push('/');
+      }
+    };
+
   return (
     <div className="container">
       <Head>
@@ -80,9 +87,7 @@ export default function Home({
           </div>
           <nav className="Nav">
             <a href="/posts/registerModi">회원수정</a>
-            <a href="/" onClick={() => confirm('로그아웃 하시겠습니까?')}>
-              로그아웃
-            </a>
+            <a href="/" onClick={() => confirm('로그아웃 하시겠습니까?')}>로그아웃</a>
           </nav>
         </header>
         <h1 className="mainP">내 물품</h1>
