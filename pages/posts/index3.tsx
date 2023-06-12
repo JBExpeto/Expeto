@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
+import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Image from 'next/image';
 
@@ -36,9 +36,9 @@ export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className='container'>
+    <div className="container">
       <Head>
-        <title>index</title>
+        <title>index3</title>
       </Head>
       <div className="container1">
         <header className="Header">
@@ -54,11 +54,15 @@ export default function Home({
           <h2 className="mainH">WELCOME TO EXPETO!!!</h2>
           <h5>로그인 및 회원가입을 하셔서 EXPETO의 서비스를 이용해주세요!</h5>
           <div className='photo'>
-            <Image src="/2.png" alt="what?" width={100} height={100} />
+            <Image src="/3.png" alt="list" width={100} height={100} />
           </div>
-          <h3>Expeto란?</h3>
-          <p>Expeto란, 라틴어로 "Ex : 타인", "peto : 찾다"라는 의미를 가져 타인이 찾아준다는 뜻으로,</p>
-          <p>물품을 대행해서 찾아주고관리해주는 서비스를 뜻합니다.</p>
+          <h3>이용 절차</h3>
+          <ul className='ul-1'>
+            <li>1. 계정 로그인 (계정이 없을 시 회원가입)</li>
+            <li>2. 마이 페이지에서 물품 등록 후 '내 물품' 리스트에 추가</li>
+            <li>3. 물품을 분실했을 시 물품 리스트 옆에 '신고' 버튼을 눌러 분실 신고</li>
+            <li>4. 신고 접수 후, 습득 신고가 통보되었을 시 해당 분실물 센터로 방문해 물품 수령</li>
+          </ul>
         </main>
         <footer className="Footer">
           <div className="bottom">
@@ -66,6 +70,9 @@ export default function Home({
             <a href="/posts/index2">소개</a>
             <a href="/posts/index3">이용 절차</a>
             <a href="/posts/index4">문의</a>
+          </div>
+          <div>
+            <h6 className='no'>Easter Egg</h6>
           </div>
         </footer>
       </div>  
@@ -140,6 +147,9 @@ export default function Home({
      p{
       text-align: center;
      }
+     .ul-1{
+      margin-left: 250px
+     }
 
       .Footer{
         width:1200px;   /* 너비 */
@@ -157,6 +167,10 @@ export default function Home({
         margin-right: 50px;
         text-decoration: none;
         color: #666;
+      }
+      .no{
+        color: white;
+        margin-top: 40px;
       }
       @media screen and (max-width:1080px){
         .container1{
@@ -197,6 +211,12 @@ export default function Home({
           margin-right: 220px;
           font-size: 15px;
          }
+         .ul-1{
+          margin-left: 150px
+         }
+         li{
+            font-size: 15px;
+         }
       }
       @media screen and (max-width:720px){
         .container1{
@@ -230,8 +250,13 @@ export default function Home({
           margin-right: 500px;
           font-size: 13px;
          }
+         .ul-1{
+          margin-left: 40px
+         }
+         li{
+            font-size: 12px;
+         }
       }
-
       `}</style>
 
   <style jsx global>{`

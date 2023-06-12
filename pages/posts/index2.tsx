@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
+import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Image from 'next/image';
 
@@ -36,9 +36,9 @@ export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className='container'>
+    <div className="container">
       <Head>
-        <title>index</title>
+        <title>index2</title>
       </Head>
       <div className="container1">
         <header className="Header">
@@ -54,11 +54,13 @@ export default function Home({
           <h2 className="mainH">WELCOME TO EXPETO!!!</h2>
           <h5>로그인 및 회원가입을 하셔서 EXPETO의 서비스를 이용해주세요!</h5>
           <div className='photo'>
-            <Image src="/2.png" alt="what?" width={100} height={100} />
+            <Image src="/1.png" alt="intro" width={100} height={100} />
           </div>
-          <h3>Expeto란?</h3>
-          <p>Expeto란, 라틴어로 "Ex : 타인", "peto : 찾다"라는 의미를 가져 타인이 찾아준다는 뜻으로,</p>
-          <p>물품을 대행해서 찾아주고관리해주는 서비스를 뜻합니다.</p>
+          <h3>소개</h3>
+          <p>안녕하세요, 저희 Expeto는 물품에 각각 QR 코드를 등록하여,</p>
+          <p>분실했을 시 물품에 각인시킨 QR 코드를 찍어,</p>
+          <p>유실물을 보다 더 빠르고 간편하게 찾을 수 있게 하는 서비스를 제공해줍니다.</p>
+          <p>여러분의 소중한 물품을 저희 Expeto에맡겨주세요!</p>
         </main>
         <footer className="Footer">
           <div className="bottom">
@@ -66,6 +68,9 @@ export default function Home({
             <a href="/posts/index2">소개</a>
             <a href="/posts/index3">이용 절차</a>
             <a href="/posts/index4">문의</a>
+          </div>
+          <div>
+            <h6 className='no'>Easter Egg</h6>
           </div>
         </footer>
       </div>  
@@ -158,6 +163,10 @@ export default function Home({
         text-decoration: none;
         color: #666;
       }
+      .no{
+        color: white;
+        margin-top: 40px;
+      }
       @media screen and (max-width:1080px){
         .container1{
           margin:0 auto;  /* 화면 중앙에 배치 */
@@ -231,7 +240,6 @@ export default function Home({
           font-size: 13px;
          }
       }
-
       `}</style>
 
   <style jsx global>{`
