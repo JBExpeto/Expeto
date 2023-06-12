@@ -1,6 +1,12 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import React from 'react'
+import Link from 'next/link'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import type { ReactNode } from 'react'
+import packageJSON from '../package.json'
+import Image from 'next/image'
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -49,9 +55,55 @@ export default function Home({
             <a href="/posts/register">회원가입</a>
           </nav>
         </header>
-        <main>
-          <p className="mainH">EXPETO 란?</p>
-          <p className="mainP">QR코드를 통해 분실물을 찾는 사이트</p>
+        <main className="contents">
+          <h2 className="mainH">WELCOME TO EXPETO!!!</h2>
+          <div className="photo">
+            <Image src="/2.png" alt="what?" width={100} height={100} />
+          </div>
+          <h3>Expeto란?</h3>
+          <p>
+            Expeto란, 라틴어로 "Ex : 타인", "peto : 찾다"라는 의미를 가져 타인이
+            찾아준다는 뜻으로,
+          </p>
+          <p>물품을 대행해서 찾아주고관리해주는 서비스를 뜻합니다.</p>
+          <div className="photo">
+            <Image src="/1.png" alt="intro" width={100} height={100} />
+          </div>
+          <h3>소개</h3>
+          <p>안녕하세요, 저희 Expeto는 물품에 각각 QR 코드를 등록하여,</p>
+          <p>분실했을 시 물품에 각인시킨 QR 코드를 찍어,</p>
+          <p>
+            유실물을 보다 더 빠르고 간편하게 찾을 수 있게 하는 서비스를
+            제공해줍니다.
+          </p>
+          <p>여러분의 소중한 물품을 저희 Expeto에맡겨주세요!</p>
+          <div className="photo">
+            <Image src="/3.png" alt="list" width={100} height={100} />
+          </div>
+          <h3>이용 절차</h3>
+          <ul className="ul-1">
+            <li>1. 계정 로그인 (계정이 없을 시 회원가입)</li>
+            <li>2. 마이 페이지에서 물품 등록 후 '내 물품' 리스트에 추가</li>
+            <li>
+              3. 물품을 분실했을 시 물품 리스트 옆에 '신고' 버튼을 눌러 분실
+              신고
+            </li>
+            <li>
+              4. 신고 접수 후, 습득 신고가 통보되었을 시 해당 분실물 센터로
+              방문해 물품 수령
+            </li>
+          </ul>
+          <div className="photo">
+            <Image src="/4.png" alt="list" width={100} height={100} />
+          </div>
+          <ul className="ul-2">
+            <li>
+              <h4>담당자 연락처: 02-XXX-XXXX</h4>
+            </li>
+            <li>
+              <h4>이용 가능 시간: XX:XX ~ XX:XX</h4>
+            </li>
+          </ul>
         </main>
         <footer className="Footer">
           <div className="bottom">
@@ -104,18 +156,36 @@ export default function Home({
           font-size: 20px;
           font-weight: 600; /* 글자 굵기 */
         }
+
+        .contents {
+          width: 1000px;
+          margin: 50px auto;
+        }
         .mainH {
           text-align: center;
           margin-top: 40px;
           font-size: 50px;
           font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
-        .mainP {
-          text-align: center;
-          margin-top: 40px;
-          font-size: 20px;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        .photo {
+          margin-left: 445px;
+          margin-top: 80px;
         }
+        h3 {
+          text-align: center;
+          margin-top: 10px;
+          font-size: 30px;
+        }
+        p {
+          text-align: center;
+        }
+        .ul-1 {
+          margin-left: 250px;
+        }
+        .ul-2 {
+          margin-left: 380px;
+        }
+
         .Footer {
           width: 1200px; /* 너비 */
           height: 1px; /* 높이 */

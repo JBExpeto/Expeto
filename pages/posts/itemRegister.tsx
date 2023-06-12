@@ -31,16 +31,19 @@ export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   // Get the session
-  const { data: session } = useSession()
-  console.log(session)
+  const { data: session, status } = useSession()
+  const router = useRouter()
 
+  // Redirect to the login page if the user is not authenticated
   if (!session) {
-    return <div>로그인이 필요합니다.</div>
+    router.push('/login')
+    return null
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     // Get the form data
+
     const target = event.target as HTMLFormElement
     const formData = new FormData(target)
     const data = Object.fromEntries(formData)
@@ -60,7 +63,6 @@ export default function Home({
       alert('Registration failed')
     }
   }
-  const router = useRouter()
 
   return (
     <div className="container">
