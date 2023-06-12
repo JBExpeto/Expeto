@@ -97,7 +97,7 @@ export default function Home({
         width:900px;   /*   너비 */  
         height:100px;   /* 메뉴 영역 높이 */  
         padding-top:35px;  /* 메뉴를 아래로 내리기 위해 */
-        padding-left: 700px;
+        padding-left: 680px;
       }
       .Nav a{
         margin-left: 90px;
@@ -137,7 +137,57 @@ export default function Home({
         margin-bottom: 50px;
         margin-left: 20px;
     }
-    
+    @media screen and (max-width:1080px){
+      .container1{
+        margin:0 auto;  /* 화면 중앙에 배치 */
+        width:800px;    /* 너비 */
+        background-color: #fff;
+      }
+      .Button{
+        width:110px;
+        height:50px;
+        font-size:20px;
+        background-color:cornflowerblue;
+        border-color:cornflowerblue;
+        border-radius: 15px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        margin-left: 280px;
+      }
+      .image{
+        margin-left: 220px;
+     }
+     .Nav a{
+        margin-left: 90px;
+        text-decoration: none;
+        color: cornflowerblue;
+        font-size: 20px;
+        font-weight:600;  /* 글자 굵기 */
+      }
+    }
+    @media screen and (max-width:720px){
+      .container1{
+        margin:0 auto;  /* 화면 중앙에 배치 */
+        width:500px;    /* 너비 */
+        background-color: #fff;
+      }
+      .Button{
+        width:110px;
+        height:50px;
+        font-size:20px;
+        background-color:cornflowerblue;
+        border-color:cornflowerblue;
+        border-radius: 15px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        margin-left: 140px;
+      }
+      .image{
+        margin-left: 80px;
+     }
+    }
       `}</style>
 
   <style jsx global>{`

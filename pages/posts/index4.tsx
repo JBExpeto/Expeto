@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
+import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Image from 'next/image';
 
@@ -36,9 +36,9 @@ export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className='container'>
+    <div className="container">
       <Head>
-        <title>index</title>
+        <title>index4</title>
       </Head>
       <div className="container1">
         <header className="Header">
@@ -54,11 +54,12 @@ export default function Home({
           <h2 className="mainH">WELCOME TO EXPETO!!!</h2>
           <h5>로그인 및 회원가입을 하셔서 EXPETO의 서비스를 이용해주세요!</h5>
           <div className='photo'>
-            <Image src="/2.png" alt="what?" width={100} height={100} />
+            <Image src="/4.png" alt="list" width={100} height={100} />
           </div>
-          <h3>Expeto란?</h3>
-          <p>Expeto란, 라틴어로 "Ex : 타인", "peto : 찾다"라는 의미를 가져 타인이 찾아준다는 뜻으로,</p>
-          <p>물품을 대행해서 찾아주고관리해주는 서비스를 뜻합니다.</p>
+          <ul className='ul-2'>
+            <li><h4>담당자 연락처: 02-XXX-XXXX</h4></li>
+            <li><h4>이용 가능 시간: XX:XX ~ XX:XX</h4></li>
+          </ul>
         </main>
         <footer className="Footer">
           <div className="bottom">
@@ -140,6 +141,9 @@ export default function Home({
      p{
       text-align: center;
      }
+     .ul-2{
+      margin-left: 380px;
+     }
 
       .Footer{
         width:1200px;   /* 너비 */
@@ -197,6 +201,12 @@ export default function Home({
           margin-right: 220px;
           font-size: 15px;
          }
+         .ul-2{
+          margin-left: 260px
+         }
+         h4{
+            font-size: 18px;
+         }
       }
       @media screen and (max-width:720px){
         .container1{
@@ -230,8 +240,13 @@ export default function Home({
           margin-right: 500px;
           font-size: 13px;
          }
+         .ul-2{
+          margin-left: 140px
+         }
+         h4{
+            font-size: 16px;
+         }
       }
-
       `}</style>
 
   <style jsx global>{`

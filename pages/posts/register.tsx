@@ -42,7 +42,7 @@ export default function Home({
   return (
     <div className="container">
       <Head>
-        <title>로그인</title>
+        <title>회원가입</title>
       </Head>
       <div className="container1">
                 <header className="Header"></header>
@@ -151,6 +151,58 @@ export default function Home({
     margin-top: 40px;
     margin-bottom: 50px;
     margin-left: 10px;
+}
+@media screen and (max-width:1080px){
+  .container1{
+    margin:0 auto;  /* 화면 중앙에 배치 */
+    width:600px;    /* 너비 */    
+    background-color: #fff;
+  }
+  .Button{
+    width:100px;
+    height:50px;
+    font-size:20px;
+    background-color:dimgray;
+    border-color:dimgray;
+    border-radius: 15px;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: 190px;
+  }
+  .nameP, .idP, .pwdP, .telP, .typeP{
+    font-size: 15px;
+        margin-top: 30px;
+        color:#666;
+        font-weight: 30px;
+        padding-left: 130px;
+  }
+}
+@media screen and (max-width:720px){
+  .container1{
+    margin:0 auto;  /* 화면 중앙에 배치 */
+    width:500px;    /* 너비 */    
+    background-color: #fff;
+  }
+  .Button{
+    width:100px;
+    height:50px;
+    font-size:20px;
+    background-color:dimgray;
+    border-color:dimgray;
+    border-radius: 15px;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: 140px;
+  }
+  .nameP, .idP, .pwdP, .telP, .typeP{
+    font-size: 15px;
+      margin-top: 30px;
+      color:#666;
+      font-weight: 30px;
+      padding-left: 80px;
+  }
 }
       `}</style>
 

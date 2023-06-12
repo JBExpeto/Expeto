@@ -151,6 +151,8 @@ const mapData = [
           border-color: cornflowerblue;
           border-radius: 15px;
           color: white;
+          margin-top: 20px;
+          margin-bottom: 30px;
         }
         .btn {
           margin: auto 0; /* 화면 중앙에 배치 */

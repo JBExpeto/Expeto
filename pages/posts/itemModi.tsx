@@ -77,15 +77,23 @@ export default function Home({
                     <p className="sizeP"><strong>규격</strong></p>
                     <div className="SelectBox">
                         <select className="SelectList">
-                            <option>---------</option>
-                            <option>대</option>
-                            <option>중</option>
-                            <option>소</option>
+                        <option>---------</option>
+                            <option>100mm</option>
+                            <option>120mm</option>
+                            <option>140mm</option>
+                            <option>160mm</option>
+                            <option>180mm</option>
+                            <option>200mm</option>
+                            <option>220mm</option>
+                            <option>240mm</option>
+                            <option>260mm</option>
+                            <option>280mm</option>
+                            <option>300mm</option>
                         </select>
                     </div>
                     <p className="moneyP"><strong>가격</strong></p>
                     <div className="inputBox">
-                        <input className="money" type="text" placeholder="가격" required></input>
+                        <input className="money" type="text" placeholder="00,000원" required></input>
                     </div>
                     <p className="colorP"><strong>색상</strong></p>
                     <div className="inputBox">
@@ -196,6 +204,90 @@ export default function Home({
         margin-left: 430px;
         margin-top: 20px;
      }
+     @media screen and (max-width:1080px){
+      .container1{
+        margin:0 auto;  /* 화면 중앙에 배치 */
+        width:600px;    /* 너비 */    
+        background-color: #fff;
+      }
+      .Button{
+        width:100px;
+        height:50px;
+        font-size:20px;
+        background-color:green;
+        border-color:green;
+        border-radius: 15px;
+        color: white;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        margin-left: 190px;
+      }
+      .nameP, .typeP, .sizeP, .moneyP, .colorP, .makerP, .dateP, .etcP, .photoP{
+        font-size: 15px;
+            margin-top: 30px;
+            color:#666;
+            font-weight: 30px;
+            padding-left: 130px;
+      }
+      .photoButton{
+        width:100px;
+        height:50px;
+        font-size:20px;
+        background-color:green;
+        border-color:green;
+        border-radius: 15px;
+        color: white;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        margin-left: 250px;
+      }
+      .image{
+        margin-left: 130px;
+        margin-top: 20px;
+     }
+    }
+    @media screen and (max-width:720px){
+      .container1{
+        margin:0 auto;  /* 화면 중앙에 배치 */
+        width:500px;    /* 너비 */    
+        background-color: #fff;
+      }
+      .Button{
+        width:100px;
+        height:50px;
+        font-size:20px;
+        background-color:green;
+        border-color:green;
+        border-radius: 15px;
+        color: white;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        margin-left: 140px;
+      }
+      .nameP, .typeP, .sizeP, .moneyP, .colorP, .makerP, .dateP, .etcP, .photoP{
+        font-size: 15px;
+          margin-top: 30px;
+          color:#666;
+          font-weight: 30px;
+          padding-left: 80px;
+      }
+      .photoButton{
+        width:100px;
+        height:50px;
+        font-size:20px;
+        background-color:green;
+        border-color:green;
+        border-radius: 15px;
+        color: white;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        margin-left: 200px;
+      }
+      .image{
+        margin-left: 80px;
+        margin-top: 20px;
+     }
+    }
       `}</style>
 
   <style jsx global>{`
