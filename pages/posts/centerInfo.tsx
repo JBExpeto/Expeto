@@ -52,13 +52,13 @@ export default function Home({
     },
     {
       content: <div style={{ color: '#000' }}> 서울종로경찰서 </div>,
-      latlng: { lat: 37.57180757275303, lng: 126.97869754787648 },
+      latlng: { lat: 37.571843614077345, lng: 126.98415225695031 },
     },
     {
       content: <div style={{ color: '#000' }}> 서울서대문경찰서 </div>,
       latlng: { lat: 37.56489333530958, lng: 126.9668077228793 },
     },
-  ]
+  ];
 
   const EventMarkerContainer = ({
     position,
@@ -162,14 +162,14 @@ export default function Home({
           margin-bottom: 50px;
           margin-left: 710px;
         }
-        .map{
-          margin-left: 560px;
-          margin-top: 10px;
+        .map {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        
         }
-        @media screen and (max-width:1080px){
-          .map{
-            margin-left: 300px;
-            margin-top: 10px;
+        @media screen and (max-width: 1080px) {
+          .map {
           }
           .Button {
             width: 100px;
@@ -181,11 +181,11 @@ export default function Home({
             color: white;
             margin-top: 40px;
             margin-bottom: 50px;
-            margin-left: 440px;
+            margin-left: 380px;
           }
         }
-        @media screen and (max-width:720px){
-          .map{
+        @media screen and (max-width: 720px) {
+          .map {
             margin-left: 50px;
             margin-top: 10px;
           }
@@ -221,5 +221,5 @@ export default function Home({
         }
       `}</style>
     </div>
-  )
+  );
 }
