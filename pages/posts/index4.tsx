@@ -96,7 +96,6 @@ export default function Home({
         color:#fff;   /* 글자 색*/
         margin: 0;
         margin-left: 5px;
-        margin-top: 10px;
       }
       .Nav{
         float:right;
@@ -123,15 +122,17 @@ export default function Home({
       font-size: 50px;
       font-family:Verdana, Geneva, Tahoma, sans-serif;
      }
-     h5{
-      text-align: center;
+     h5 {
       color: #666;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
       margin-top: 10px;
-     }
+      font-size: 15px;
+      text-align: center;
+    }
      .photo {
       margin-left: 445px;
       margin-top: 80px;
+      margin-bottom: 20px;
      }
      h3{
       text-align: center;
@@ -142,8 +143,12 @@ export default function Home({
       text-align: center;
      }
      .ul-2{
-      margin-left: 380px;
+      margin-left: 360px;
+      list-style-type: none;
      }
+     h4{
+      font-size: 20px;
+   }
 
       .Footer{
         width:1200px;   /* 너비 */
@@ -191,6 +196,7 @@ export default function Home({
          .photo {
           margin-left: 330px;
           margin-top: 80px;
+          margin-bottom: 20px;
          }
          h3{
           margin-top: 10px;
@@ -202,7 +208,7 @@ export default function Home({
           font-size: 15px;
          }
          .ul-2{
-          margin-left: 260px
+          margin-left: 250px
          }
          h4{
             font-size: 18px;

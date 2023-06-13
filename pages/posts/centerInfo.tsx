@@ -151,7 +151,7 @@ export default function Home({
           color: white;
           margin-top: 40px;
           margin-bottom: 50px;
-          margin-left: 720px;
+          margin-left: 710px;
         }
       `}</style>
 
