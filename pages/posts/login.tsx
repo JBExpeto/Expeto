@@ -69,12 +69,18 @@ export default function Home() {
             서비스를 이용하시고 싶으시면 로그인을 해주세요.
           </h4>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <p className="idP">
             <strong>아이디</strong>
           </p>
           <div className="inputBox">
-            <input className="id" type="text" placeholder="ID" required></input>
+            <input
+              className="id"
+              type="text"
+              placeholder="ID"
+              name="id"
+              required
+            ></input>
           </div>
           <p className="pwdP">
             <strong>비밀번호</strong>
@@ -84,6 +90,7 @@ export default function Home() {
               className="pwd"
               type="password"
               placeholder="비밀번호"
+              name="password"
               required
             ></input>
           </div>
