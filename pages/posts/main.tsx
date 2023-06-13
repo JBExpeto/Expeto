@@ -94,18 +94,18 @@ export default function Home({
         <div>
           <Table>
             <Table.Header>
-              <Table.Column width={150}>사진</Table.Column>
-              <Table.Column width={130}>일련번호</Table.Column>
-              <Table.Column width={100}>이름</Table.Column>
-              <Table.Column width={100}>유형</Table.Column>
-              <Table.Column width={40}>사이즈</Table.Column>
-              <Table.Column width={100}>가격</Table.Column>
-              <Table.Column width={130}>색상</Table.Column>
-              <Table.Column width={100}>제조사</Table.Column>
-              <Table.Column width={130}>Notice</Table.Column>
-              <Table.Column width={130}>QR</Table.Column>
-              <Table.Column width={90}>수정</Table.Column>
-              <Table.Column width={90}>삭제</Table.Column>
+              <Table.Column width={93}>사진</Table.Column>
+              <Table.Column width={93}>일련번호</Table.Column>
+              <Table.Column width={93}>이름</Table.Column>
+              <Table.Column width={93}>유형</Table.Column>
+              <Table.Column width={93}>사이즈</Table.Column>
+              <Table.Column width={93}>가격</Table.Column>
+              <Table.Column width={93}>색상</Table.Column>
+              <Table.Column width={93}>제조사</Table.Column>
+              <Table.Column width={93}>Notice</Table.Column>
+              <Table.Column width={93}>QR</Table.Column>
+              <Table.Column width={93}>수정</Table.Column>
+              <Table.Column width={93}>삭제</Table.Column>
               <Table.Column>신고</Table.Column>
             </Table.Header>
             <Table.Body>
@@ -156,14 +156,6 @@ export default function Home({
           value="등록"
           onClick={() => router.push('/posts/itemRegister')}
         ></input>
-        <footer className="Footer">
-          <div className="bottom">
-            <a href="#">EXPETO란?</a>
-            <a href="#">이용약관</a>
-            <a href="#">개인정보처리방침</a>
-            <a href="#">고객센터</a>
-          </div>
-        </footer>
       </div>
 
       <style jsx>{`
@@ -197,7 +189,7 @@ export default function Home({
           width: 900px; /*   너비 */
           height: 100px; /* 메뉴 영역 높이 */
           padding-top: 35px; /* 메뉴를 아래로 내리기 위해 */
-          padding-left: 700px;
+          padding-left: 680px;
         }
         .Nav a {
           margin-right: 20px;
@@ -207,23 +199,6 @@ export default function Home({
           font-weight: 600; /* 글자 굵기 */
         }
 
-        .Footer {
-          width: 1200px; /* 너비 */
-          height: 1px; /* 높이 */
-          margin-top: 100px;
-          background-color: black;
-        }
-        .bottom {
-          width: 100%;
-          height: 30px;
-          padding-top: 20px;
-          padding-left: 15px;
-        }
-        .bottom a {
-          margin-right: 20px;
-          text-decoration: none;
-          color: #666;
-        }
         .mainP {
           margin-top: 200px;
           font-size: 30px;
@@ -248,6 +223,49 @@ export default function Home({
           font-size: 15px;
           border-radius: 15px;
           color: white;
+        }
+        @media screen and (max-width: 1080px){
+          .container1 {
+            margin: 0 auto; /* 화면 중앙에 배치 */
+            width: 800px; /* 너비 */
+            background-color: #fff;
+          }
+          .Nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: green;
+            font-size: 20px;
+            font-weight: 600; /* 글자 굵기 */
+          }
+          .Button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            background-color: green;
+            border-color: green;
+            border-radius: 15px;
+            color: white;
+            margin-top: 50px;
+            margin-left: 350px;
+          }
+        }
+        @media screen and (max-width: 720px){
+          .container1 {
+            margin: 0 auto; /* 화면 중앙에 배치 */
+            width: 500px; /* 너비 */
+            background-color: #fff;
+          }
+          .Button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            background-color: green;
+            border-color: green;
+            border-radius: 15px;
+            color: white;
+            margin-top: 50px;
+            margin-left: 180px;
+          }
         }
       `}</style>
 
