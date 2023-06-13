@@ -107,10 +107,10 @@ export default function Home({
         </main>
         <footer className="Footer">
           <div className="bottom">
-            <a href="#">EXPETO란?</a>
-            <a href="#">이용약관</a>
-            <a href="#">개인정보처리방침</a>
-            <a href="#">고객센터</a>
+            <a href="/">EXPETO란?</a>
+            <a href="/posts/index2">소개</a>
+            <a href="/posts/index3">이용 절차</a>
+            <a href="/posts/index4">문의</a>
           </div>
         </footer>
       </div>
@@ -167,6 +167,12 @@ export default function Home({
           font-size: 50px;
           font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+        h5 {
+          text-align: center;
+          color: #666;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          margin-top: 10px;
+        }
         .photo {
           margin-left: 445px;
           margin-top: 80px;
@@ -179,17 +185,11 @@ export default function Home({
         p {
           text-align: center;
         }
-        .ul-1 {
-          margin-left: 250px;
-        }
-        .ul-2 {
-          margin-left: 380px;
-        }
 
         .Footer {
           width: 1200px; /* 너비 */
           height: 1px; /* 높이 */
-          margin-top: 100px;
+          margin-top: 80px;
           background-color: black;
         }
         .bottom {
@@ -199,9 +199,82 @@ export default function Home({
           padding-left: 15px;
         }
         .bottom a {
-          margin-right: 20px;
+          margin-right: 50px;
           text-decoration: none;
           color: #666;
+        }
+        @media screen and (max-width: 1080px) {
+          .container1 {
+            margin: 0 auto; /* 화면 중앙에 배치 */
+            width: 800px; /* 너비 */
+            background-color: #fff;
+          }
+          .Nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: dimgray;
+            font-size: 20px;
+            font-weight: 600; /* 글자 굵기 */
+          }
+          .mainH {
+            margin-top: 40px;
+            font-size: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-right: 220px;
+          }
+          h5 {
+            color: #666;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 10px;
+            font-size: 14px;
+            margin-right: 220px;
+          }
+          .photo {
+            margin-left: 330px;
+            margin-top: 80px;
+          }
+          h3 {
+            margin-top: 10px;
+            font-size: 25px;
+            margin-right: 220px;
+          }
+          p {
+            margin-right: 220px;
+            font-size: 15px;
+          }
+        }
+        @media screen and (max-width: 720px) {
+          .container1 {
+            margin: 0 auto; /* 화면 중앙에 배치 */
+            width: 500px; /* 너비 */
+            background-color: #fff;
+          }
+          .mainH {
+            margin-top: 40px;
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-right: 500px;
+          }
+          h5 {
+            color: #666;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 10px;
+            font-size: 13px;
+            margin-right: 500px;
+          }
+          .photo {
+            margin-left: 200px;
+            margin-top: 80px;
+          }
+          h3 {
+            margin-top: 10px;
+            font-size: 20px;
+            margin-right: 500px;
+          }
+          p {
+            margin-right: 500px;
+            font-size: 13px;
+          }
         }
       `}</style>
 

@@ -74,7 +74,7 @@ export default function Home({
         <div className="logo">
           <p>물품 등록</p>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form>
           <p className="photoP">
             <strong>사진</strong>
           </p>
@@ -97,7 +97,6 @@ export default function Home({
               className="name"
               type="text"
               placeholder="물품명"
-              name="itemname"
               required
             ></input>
           </div>
@@ -105,7 +104,7 @@ export default function Home({
             <strong>유형</strong>
           </p>
           <div className="SelectBox">
-            <select className="SelectList" name="type">
+            <select className="SelectList">
               <option>---------</option>
               <option>전자기기</option>
               <option>신분증</option>
@@ -119,11 +118,19 @@ export default function Home({
             <strong>규격</strong>
           </p>
           <div className="SelectBox">
-            <select className="SelectList" name="size">
+            <select className="SelectList">
               <option>---------</option>
-              <option>대</option>
-              <option>중</option>
-              <option>소</option>
+              <option>100mm</option>
+              <option>120mm</option>
+              <option>140mm</option>
+              <option>160mm</option>
+              <option>180mm</option>
+              <option>200mm</option>
+              <option>220mm</option>
+              <option>240mm</option>
+              <option>260mm</option>
+              <option>280mm</option>
+              <option>300mm</option>
             </select>
           </div>
           <p className="moneyP">
@@ -133,8 +140,7 @@ export default function Home({
             <input
               className="money"
               type="text"
-              placeholder="가격"
-              name="price"
+              placeholder="00,000원"
               required
             ></input>
           </div>
@@ -146,7 +152,6 @@ export default function Home({
               className="color"
               type="text"
               placeholder="색상"
-              name="color"
               required
             ></input>
           </div>
@@ -158,7 +163,6 @@ export default function Home({
               className="maker"
               type="text"
               placeholder="제조사"
-              name="Manufacturer"
               required
             ></input>
           </div>
@@ -170,7 +174,6 @@ export default function Home({
               className="date"
               type="text"
               placeholder="등록 일자"
-              name="Registration date"
               required
             ></input>
           </div>
@@ -183,7 +186,6 @@ export default function Home({
               cols={32}
               rows={8}
               placeholder="ex) 010-0000-0000로 연락해주세요."
-              name="Notice"
             ></textarea>
           </div>
           <input
@@ -307,6 +309,106 @@ export default function Home({
         .image {
           margin-left: 430px;
           margin-top: 20px;
+        }
+        @media screen and (max-width: 1080px) {
+          .container1 {
+            margin: 0 auto; /* 화면 중앙에 배치 */
+            width: 600px; /* 너비 */
+            background-color: #fff;
+          }
+          .Button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            background-color: green;
+            border-color: green;
+            border-radius: 15px;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-left: 190px;
+          }
+          .nameP,
+          .typeP,
+          .sizeP,
+          .moneyP,
+          .colorP,
+          .makerP,
+          .dateP,
+          .etcP,
+          .photoP {
+            font-size: 15px;
+            margin-top: 30px;
+            color: #666;
+            font-weight: 30px;
+            padding-left: 130px;
+          }
+          .photoButton {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            background-color: green;
+            border-color: green;
+            border-radius: 15px;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-left: 250px;
+          }
+          .image {
+            margin-left: 130px;
+            margin-top: 20px;
+          }
+        }
+        @media screen and (max-width: 720px) {
+          .container1 {
+            margin: 0 auto; /* 화면 중앙에 배치 */
+            width: 500px; /* 너비 */
+            background-color: #fff;
+          }
+          .Button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            background-color: green;
+            border-color: green;
+            border-radius: 15px;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-left: 140px;
+          }
+          .nameP,
+          .typeP,
+          .sizeP,
+          .moneyP,
+          .colorP,
+          .makerP,
+          .dateP,
+          .etcP,
+          .photoP {
+            font-size: 15px;
+            margin-top: 30px;
+            color: #666;
+            font-weight: 30px;
+            padding-left: 80px;
+          }
+          .photoButton {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            background-color: green;
+            border-color: green;
+            border-radius: 15px;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-left: 200px;
+          }
+          .image {
+            margin-left: 80px;
+            margin-top: 20px;
+          }
         }
       `}</style>
 
