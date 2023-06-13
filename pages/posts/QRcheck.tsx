@@ -57,7 +57,7 @@ export default function Home({
                 <main>
                     <h1 className="mainH">분실물 획득!</h1>
                     <div className="image">
-                        <Image src="/path/to/your/image.jpg" alt="lostimage" width={500} height={300} />
+                        <Image src="/fake.png" alt="lostimage" width={300} height={300} />
                     </div>
                     <p className="mainP">분실물 습득 시 010-1111-1111로 연락주세요.</p>
                     <input className="Button" type="button" value="분실 신고" onClick={() => confirm('분실물 발견 신고를 하시겠습니까?')}></input>
@@ -111,7 +111,7 @@ export default function Home({
         margin: 40px;
      }
      .image{
-        margin-left: 420px;
+        padding-left: 450px;
      }
      .Button{
         width:110px;
@@ -156,7 +156,7 @@ export default function Home({
         margin-left: 280px;
       }
       .image{
-        margin-left: 220px;
+        padding-left: 240px;
      }
      .Nav a{
         margin-left: 90px;
@@ -185,7 +185,7 @@ export default function Home({
         margin-left: 140px;
       }
       .image{
-        margin-left: 80px;
+        padding-left: 100px;
      }
     }
       `}</style>
