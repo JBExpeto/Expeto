@@ -100,7 +100,6 @@ export default function Home({
         color:#fff;   /* 글자 색*/
         margin: 0;
         margin-left: 5px;
-        margin-top: 10px;
       }
       .Nav{
         float:right;
@@ -127,12 +126,13 @@ export default function Home({
       font-size: 50px;
       font-family:Verdana, Geneva, Tahoma, sans-serif;
      }
-     h5{
-      text-align: center;
+     h5 {
       color: #666;
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
       margin-top: 10px;
-     }
+      font-size: 15px;
+      text-align: center;
+    }
      .photo {
       margin-left: 445px;
       margin-top: 80px;
@@ -141,6 +141,7 @@ export default function Home({
       text-align: center;
       margin-top: 10px;
       font-size: 30px;
+      margin-bottom: 10px;
      }
      p{
       text-align: center;

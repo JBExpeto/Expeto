@@ -89,7 +89,6 @@ export default function Home({
         font-size:50px;   /* 글자 크기 */
         color:#fff;   /* 글자 색*/
         margin: 0;
-        margin-top: 10px;
         margin-left: 5px;
       }
       .Nav{
