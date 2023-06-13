@@ -4,7 +4,13 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
 import { Map, MapMarker, useMap } from 'react-kakao-maps-sdk'
 import { useState } from 'react'
-
+interface EventMarkerContainerProps {
+  position: {
+    lat: number
+    lng: number
+  }
+  content: JSX.Element
+}
 type ConnectionStatus = {
   isConnected: boolean
 }
@@ -54,7 +60,10 @@ export default function Home({
     },
   ]
 
-  const EventMarkerContainer = ({ position, content }) => {
+  const EventMarkerContainer = ({
+    position,
+    content,
+  }: EventMarkerContainerProps) => {
     const map = useMap()
     const [isVisible, setIsVisible] = useState(false)
 
