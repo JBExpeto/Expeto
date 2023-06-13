@@ -162,6 +162,46 @@ export default function Home({
           margin-bottom: 50px;
           margin-left: 710px;
         }
+        .map{
+          margin-left: 560px;
+          margin-top: 10px;
+        }
+        @media screen and (max-width:1080px){
+          .map{
+            margin-left: 300px;
+            margin-top: 10px;
+          }
+          .Button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            border-color: cornflowerblue;
+            border-radius: 15px;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-left: 440px;
+          }
+        }
+        @media screen and (max-width:720px){
+          .map{
+            margin-left: 50px;
+            margin-top: 10px;
+          }
+          .Button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            background-color: cornflowerblue;
+            border-color: cornflowerblue;
+            border-radius: 15px;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-left: 180px;
+          }
+        }
       `}</style>
 
       <style jsx global>{`
