@@ -2,7 +2,7 @@ import Head from 'next/head'
 import clientPromise from '../../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
-import React from 'react'
+import {useState} from 'react'
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -43,16 +43,33 @@ export default function Home({
       body: JSON.stringify(data),
     })
 
-    // Handle the response
+    if (password !== confirmPassword) {
+      setPasswordError('비밀번호가 일치하지 않습니다.');
+      alert('비밀번호가 일치하지 않습니다.')
+    } else {
+      // Handle the response
     if (response.ok) {
       // Registration successful
       alert('Registration successful')
-      router.push('/')
+      router.push('/posts/login')
     } else {
       // Registration failed
       alert('Registration failed')
     }
+   }
   }
+
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+  };
+
+  const handleConfirmPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setConfirmPassword(event.target.value);
+  };
 
   const router = useRouter()
 
@@ -101,7 +118,22 @@ export default function Home({
               placeholder="비밀번호"
               name="password"
               required
+              value={password} onChange={handlePasswordChange}
             ></input>
+          </div>
+          <p className="pwdP-1">
+            <strong>비밀번호 확인</strong>
+          </p>
+          <div className="inputBox">
+            <input
+              className="pwd-1"
+              type="password"
+              placeholder="비밀번호 확인"
+              name="password-1"
+              required
+              value={confirmPassword} onChange={handleConfirmPasswordChange}
+            ></input>
+            {passwordError && <p>{passwordError}</p>}
           </div>
           <p className="telP">
             <strong>연락처</strong>
@@ -167,7 +199,8 @@ export default function Home({
         .idP,
         .pwdP,
         .telP,
-        .typeP {
+        .typeP,
+        .pwdP-1 {
           font-size: 15px;
           margin-top: 30px;
           color: #666;
@@ -177,7 +210,8 @@ export default function Home({
         .name,
         .id,
         .pwd,
-        .tel {
+        .tel,
+        .pwd-1 {
           border-radius: 10px;
           font-size: 15px;
           padding: 15px;
@@ -188,7 +222,8 @@ export default function Home({
         .name:focus,
         .id:focus,
         .pwd:focus,
-        .tel:focus {
+        .tel:focus,
+        .pwd-1:focus {
           border-color: blue;
           outline: none;
         }
