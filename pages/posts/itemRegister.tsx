@@ -134,36 +134,33 @@ export default function Home({
             </select>
           </div>
           <p className="moneyP">
-            <strong>가격</strong>
+            <strong>가격(선택)</strong>
           </p>
           <div className="inputBox">
             <input
               className="money"
               type="text"
               placeholder="00,000원"
-              required
             ></input>
           </div>
           <p className="colorP">
-            <strong>색상</strong>
+            <strong>색상(선택)</strong>
           </p>
           <div className="inputBox">
             <input
               className="color"
               type="text"
               placeholder="색상"
-              required
             ></input>
           </div>
           <p className="makerP">
-            <strong>제조사</strong>
+            <strong>제조사(선택)</strong>
           </p>
           <div className="inputBox">
             <input
               className="maker"
               type="text"
               placeholder="제조사"
-              required
             ></input>
           </div>
           <p className="dateP">

@@ -91,17 +91,17 @@ export default function Home({
                             <option>300mm</option>
                         </select>
                     </div>
-                    <p className="moneyP"><strong>가격</strong></p>
+                    <p className="moneyP"><strong>가격(선택)</strong></p>
                     <div className="inputBox">
-                        <input className="money" type="text" placeholder="00,000원" required></input>
+                        <input className="money" type="text" placeholder="00,000원"></input>
                     </div>
-                    <p className="colorP"><strong>색상</strong></p>
+                    <p className="colorP"><strong>색상(선택)</strong></p>
                     <div className="inputBox">
-                        <input className="color" type="text" placeholder="색상" required></input>
+                        <input className="color" type="text" placeholder="색상"></input>
                     </div>
-                    <p className="makerP"><strong>제조사</strong></p>
+                    <p className="makerP"><strong>제조사(선택)</strong></p>
                     <div className="inputBox">
-                        <input className="maker" type="text" placeholder="제조사" required></input>
+                        <input className="maker" type="text" placeholder="제조사"></input>
                     </div>
                     <p className="dateP"><strong>등록 일자</strong></p>
                     <div className="inputBox">
