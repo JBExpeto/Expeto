@@ -1,8 +1,8 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import type { NextAuthOptions } from 'next-auth'
-import { ObjectId } from 'mongodb'
-import clientPromise from '../../../lib/mongodb'
+import clientPromise from '../auth/lib/mongodb'
+import { compare } from 'bcryptjs'
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -19,22 +19,29 @@ export const authOptions: NextAuthOptions = {
         const collection = db.collection('users')
 
         if (credentials) {
-          // Find user by username and password
+          // Find user by username
           const user = await collection.findOne({
             username: credentials.username,
-            password: credentials.password,
           })
 
           if (user) {
-            // Convert MongoDB document to user object
-            const convertedUser = {
-              id: user._id.toHexString(),
-              name: user.name,
-              email: user.email,
-              // Add other user properties as needed
-            }
+            // Compare passwords
+            const passwordMatch = await compare(
+              credentials.password,
+              user.password
+            )
 
-            return convertedUser
+            if (user) {
+              // Convert MongoDB document to user object
+              const convertedUser = {
+                id: user._id.toHexString(),
+                name: user.name,
+                email: user.email,
+                // Add other user properties as needed
+              }
+
+              return convertedUser
+            }
           }
         }
 

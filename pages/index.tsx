@@ -1,12 +1,13 @@
 import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
+import clientPromise from './api/auth/lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import React from 'react'
 import Link from 'next/link'
-import { signIn, signOut, useSession } from 'next-auth/react'
+
 import type { ReactNode } from 'react'
 import packageJSON from '../package.json'
 import Image from 'next/image'
+import { useSession } from 'next-auth/react'
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -40,6 +41,7 @@ export const getServerSideProps: GetServerSideProps<
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const { data: session } = useSession()
   return (
     <div className="container">
       <Head>
@@ -103,7 +105,6 @@ export default function Home({
           color: #fff; /* 글자 색*/
           margin: 0;
           margin-left: 5px;
-          
         }
         .Nav {
           float: right;

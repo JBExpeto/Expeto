@@ -1,6 +1,6 @@
 import { getSession } from 'next-auth/react'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import clientPromise from '../../lib/mongodb'
+import clientPromise from './auth/lib/mongodb'
 
 export default async function itemRegister(
   req: NextApiRequest,
