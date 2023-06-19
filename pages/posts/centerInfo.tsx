@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
+import clientPromise from '../api/auth/lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
 import { Map, MapMarker, useMap } from 'react-kakao-maps-sdk'
@@ -58,7 +58,7 @@ export default function Home({
       content: <div style={{ color: '#000' }}> 서울서대문경찰서 </div>,
       latlng: { lat: 37.56489333530958, lng: 126.9668077228793 },
     },
-  ];
+  ]
 
   const EventMarkerContainer = ({
     position,
@@ -166,7 +166,6 @@ export default function Home({
           display: flex;
           justify-content: center;
           align-items: center;
-        
         }
         @media screen and (max-width: 1080px) {
           .map {
@@ -221,5 +220,5 @@ export default function Home({
         }
       `}</style>
     </div>
-  );
+  )
 }

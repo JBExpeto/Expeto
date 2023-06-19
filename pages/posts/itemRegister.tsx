@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
+import clientPromise from '../api/auth/lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import React, { useEffect } from 'react'
 import Image from 'next/image'
@@ -137,31 +137,19 @@ export default function Home({
             <strong>가격(선택)</strong>
           </p>
           <div className="inputBox">
-            <input
-              className="money"
-              type="text"
-              placeholder="00,000원"
-            ></input>
+            <input className="money" type="text" placeholder="00,000원"></input>
           </div>
           <p className="colorP">
             <strong>색상(선택)</strong>
           </p>
           <div className="inputBox">
-            <input
-              className="color"
-              type="text"
-              placeholder="색상"
-            ></input>
+            <input className="color" type="text" placeholder="색상"></input>
           </div>
           <p className="makerP">
             <strong>제조사(선택)</strong>
           </p>
           <div className="inputBox">
-            <input
-              className="maker"
-              type="text"
-              placeholder="제조사"
-            ></input>
+            <input className="maker" type="text" placeholder="제조사"></input>
           </div>
           <p className="dateP">
             <strong>등록 일자</strong>

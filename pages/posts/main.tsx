@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
+import clientPromise from '../api/auth/lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import { Table } from '@nextui-org/react'
 import React from 'react'
@@ -224,7 +224,7 @@ export default function Home({
           border-radius: 15px;
           color: white;
         }
-        @media screen and (max-width: 1080px){
+        @media screen and (max-width: 1080px) {
           .container1 {
             margin: 0 auto; /* 화면 중앙에 배치 */
             width: 800px; /* 너비 */
@@ -249,7 +249,7 @@ export default function Home({
             margin-left: 350px;
           }
         }
-        @media screen and (max-width: 720px){
+        @media screen and (max-width: 720px) {
           .container1 {
             margin: 0 auto; /* 화면 중앙에 배치 */
             width: 500px; /* 너비 */
