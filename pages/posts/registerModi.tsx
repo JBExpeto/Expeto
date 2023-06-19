@@ -112,6 +112,8 @@ export default function RegisterModi({ user }: RegisterModiProps) {
               type="tel"
               placeholder="010-0000-0000"
               name="contact"
+              pattern='(010)-\d{3,4}-\d{4}'
+              title="형식 010-0000-0000"
               required
             ></input>
           </div>
