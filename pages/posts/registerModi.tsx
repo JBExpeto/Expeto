@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
+import clientPromise from '../api/auth/lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import React from 'react'
 import { useRouter } from 'next/router'

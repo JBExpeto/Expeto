@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
+import clientPromise from '../api/auth/lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { signIn } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -27,6 +27,9 @@ export const getServerSideProps: GetServerSideProps<
 }
 
 export default function Home() {
+  const { data: session, status } = useSession()
+  const router = useRouter()
+
   // Add this function to handle form submission
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -39,7 +42,8 @@ export default function Home() {
     // Send a login request
     const result = await signIn('credentials', {
       redirect: false,
-      ...data,
+      username: data.username, // Pass the username field
+      password: data.password, // Pass the password field
     })
 
     // Handle the response
@@ -53,7 +57,13 @@ export default function Home() {
     }
   }
 
-  const router = useRouter()
+  if (status === 'loading') {
+    return <div>Loading...</div>
+  }
+
+  if (session) {
+    return <div>You are already logged in.</div>
+  }
 
   return (
     <div className="container">

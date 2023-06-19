@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import clientPromise from '../../lib/mongodb'
+import clientPromise from '../api/auth/lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
-import {useState} from 'react'
+import { useState } from 'react'
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -44,32 +44,34 @@ export default function Home({
     })
 
     if (password !== confirmPassword) {
-      setPasswordError('비밀번호가 일치하지 않습니다.');
+      setPasswordError('비밀번호가 일치하지 않습니다.')
       alert('비밀번호가 일치하지 않습니다.')
     } else {
       // Handle the response
-    if (response.ok) {
-      // Registration successful
-      alert('Registration successful')
-      router.push('/posts/login')
-    } else {
-      // Registration failed
-      alert('Registration failed')
+      if (response.ok) {
+        // Registration successful
+        alert('Registration successful')
+        router.push('/posts/login')
+      } else {
+        // Registration failed
+        alert('Registration failed')
+      }
     }
-   }
   }
 
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [passwordError, setPasswordError] = useState('')
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
-  };
+    setPassword(event.target.value)
+  }
 
-  const handleConfirmPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setConfirmPassword(event.target.value);
-  };
+  const handleConfirmPasswordChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setConfirmPassword(event.target.value)
+  }
 
   const router = useRouter()
 
@@ -118,7 +120,8 @@ export default function Home({
               placeholder="비밀번호"
               name="password"
               required
-              value={password} onChange={handlePasswordChange}
+              value={password}
+              onChange={handlePasswordChange}
             ></input>
           </div>
           <p className="pwdP-1">
@@ -131,7 +134,8 @@ export default function Home({
               placeholder="비밀번호 확인"
               name="password-1"
               required
-              value={confirmPassword} onChange={handleConfirmPasswordChange}
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
             ></input>
             {passwordError && <p>{passwordError}</p>}
           </div>
