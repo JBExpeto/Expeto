@@ -118,7 +118,8 @@ export default function Home({
               placeholder="비밀번호"
               name="password"
               required
-              value={password} onChange={handlePasswordChange}
+              value={password}
+              onChange={handlePasswordChange}
             ></input>
           </div>
           <p className="pwdP-1">
@@ -131,7 +132,8 @@ export default function Home({
               placeholder="비밀번호 확인"
               name="password-1"
               required
-              value={confirmPassword} onChange={handleConfirmPasswordChange}
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
             ></input>
             {passwordError && <p>{passwordError}</p>}
           </div>
@@ -144,6 +146,8 @@ export default function Home({
               type="tel"
               placeholder="010-0000-0000"
               name="contact"
+              pattern="(010)-\d{3,4}-\d{4}"
+              title="형식 010-0000-0000"
               required
             ></input>
           </div>
@@ -337,5 +341,5 @@ export default function Home({
         }
       `}</style>
     </div>
-  )
+  );
 }
