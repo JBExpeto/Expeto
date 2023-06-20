@@ -35,8 +35,8 @@ export const authOptions: NextAuthOptions = {
               // Convert MongoDB document to user object
               const convertedUser = {
                 id: user._id.toHexString(),
-                name: user.name,
-                email: user.email,
+                name: user.username,
+
                 // Add other user properties as needed
               }
 

@@ -103,10 +103,10 @@ export default function Home({
           </p>
           <div className="inputBox">
             <input
-              className="id"
+              className="username"
               type="text"
               placeholder="ID"
-              name="id"
+              name="username"
               required
             ></input>
           </div>

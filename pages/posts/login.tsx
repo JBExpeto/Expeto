@@ -88,7 +88,7 @@ export default function Home() {
               className="id"
               type="text"
               placeholder="ID"
-              name="id"
+              name="username"
               required
             ></input>
           </div>
