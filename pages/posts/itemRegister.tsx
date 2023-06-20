@@ -35,10 +35,6 @@ export default function Home({
   const router = useRouter()
 
   // Redirect to the login page if the user is not authenticated
-  if (!session) {
-    router.push('/login')
-    return null
-  }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()

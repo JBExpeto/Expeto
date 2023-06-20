@@ -10,7 +10,7 @@ export default async function register(
     return res.status(405).json({ message: 'Method Not Allowed' })
   }
 
-  const { name, id, password, contact, userType } = req.body
+  const { name, username, password, contact, userType } = req.body
 
   try {
     // Generate a salt
@@ -26,7 +26,7 @@ export default async function register(
     // Store the user data in MongoDB
     await db.collection('users').insertOne({
       name,
-      id,
+      username,
       password: hashedPassword,
       contact,
       userType,
