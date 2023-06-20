@@ -214,7 +214,7 @@ export default function Home({
           padding-left: 430px;
         }
         .name,
-        .id,
+        .username,
         .pwd,
         .tel,
         .pwd-1 {
@@ -226,7 +226,7 @@ export default function Home({
           border: 3px black solid;
         }
         .name:focus,
-        .id:focus,
+        .username:focus,
         .pwd:focus,
         .tel:focus,
         .pwd-1:focus {
