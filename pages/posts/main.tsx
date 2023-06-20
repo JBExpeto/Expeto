@@ -150,6 +150,11 @@ export default function Home({
             </Table.Body>
           </Table>
         </div>
+        <img
+  src="/lostqr.png" 
+  alt="qrimage" width={1000} height={1000}
+  className="RegisterImage"
+></img>
         <input
           className="Button"
           type="button"
@@ -183,6 +188,11 @@ export default function Home({
           color: #fff; /* 글자 색*/
           margin: 0;
           margin-left: 5px;
+        }
+        .RegisterImage {
+          width: 100px;
+          height: 100px;
+          margin-right: 10px;
         }
         .Nav {
           float: right;
@@ -224,7 +234,7 @@ export default function Home({
           border-radius: 15px;
           color: white;
         }
-        @media screen and (max-width: 1080px) {
+        @media screen and (max-width: 1080px){
           .container1 {
             margin: 0 auto; /* 화면 중앙에 배치 */
             width: 800px; /* 너비 */
@@ -249,7 +259,7 @@ export default function Home({
             margin-left: 350px;
           }
         }
-        @media screen and (max-width: 720px) {
+        @media screen and (max-width: 720px){
           .container1 {
             margin: 0 auto; /* 화면 중앙에 배치 */
             width: 500px; /* 너비 */

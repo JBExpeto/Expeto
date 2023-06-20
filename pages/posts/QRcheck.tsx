@@ -2,16 +2,14 @@ import Head from 'next/head'
 import clientPromise from '../api/auth/lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import React from 'react'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 type ConnectionStatus = {
   isConnected: boolean
 }
 
-export const getServerSideProps: GetServerSideProps<
-  ConnectionStatus
-> = async () => {
+export const getServerSideProps: GetServerSideProps<ConnectionStatus> = async () => {
   try {
     await clientPromise
     // `await clientPromise` will use the default database passed in the MONGODB_URI
@@ -37,7 +35,7 @@ export const getServerSideProps: GetServerSideProps<
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="container">
@@ -59,52 +57,45 @@ export default function Home({
             <Image src="/fake.png" alt="lostimage" width={300} height={300} />
           </div>
           <p className="mainP">분실물 습득 시 010-1111-1111로 연락주세요.</p>
-          <input
-            className="Button"
-            type="button"
-            value="분실 신고"
-            onClick={() => confirm('분실물 발견 신고를 하시겠습니까?')}
-          ></input>
-          <input
-            className="Button2"
-            type="button"
-            value="분실물 센터"
-            onClick={() => router.push('/posts/centerInfo')}
-          ></input>
+          <input className="Button" type="button" value="분실 신고" onClick={() => confirm('분실물 발견 신고를 하시겠습니까?')}></input>
+          <input className="Button2" type="button" value="분실물 센터" onClick={() => router.push('/posts/centerInfo')}></input>
+          <div className="smallImage">
+            <Image src="/lostqr.png" alt="qrimage" width={150} height={150} />
+          </div>
         </main>
       </div>
 
       <style jsx>{`
         .container1 {
-          margin: 0 auto; /* 화면 중앙에 배치 */
-          width: 1200px; /* 너비 */
+          margin: 0 auto;
+          width: 1200px;
           background-color: #fff;
         }
         .Header {
-          width: 100%; /*  너비 */
-          height: 100px; /* 높이 */
+          width: 100%;
+          height: 100px;
           background-color: blue;
         }
         .logo {
-          float: left; /* 왼쪽으로 플로팅 */
-          width: 260px; /*  너비 */
-          height: 100px; /* 높이 */
-          line-height: 100px; /* 세로로 중간에 맞춤 - 줄간격을 높이 값과 같게 */
-          padding-left: 20px; /* 왼쪽에 여백 */
+          float: left;
+          width: 260px;
+          height: 100px;
+          line-height: 100px;
+          padding-left: 20px;
           background-color: cornflowerblue;
         }
         .logo h1 {
           font-family: Verdana, Geneva, Tahoma, sans-serif;
-          font-size: 50px; /* 글자 크기 */
-          color: #fff; /* 글자 색*/
+          font-size: 50px;
+          color: #fff;
           margin: 0;
           margin-left: 5px;
         }
         .Nav {
           float: right;
-          width: 900px; /*   너비 */
-          height: 100px; /* 메뉴 영역 높이 */
-          padding-top: 35px; /* 메뉴를 아래로 내리기 위해 */
+          width: 900px;
+          height: 100px;
+          padding-top: 35px;
           padding-left: 680px;
         }
         .Nav a {
@@ -112,7 +103,7 @@ export default function Home({
           text-decoration: none;
           color: #fff;
           font-size: 20px;
-          font-weight: 600; /* 글자 굵기 */
+          font-weight: 600;
         }
         .mainH,
         .mainP {
@@ -146,10 +137,14 @@ export default function Home({
           margin-bottom: 50px;
           margin-left: 20px;
         }
+        .smallImage {
+          text-align: center;
+          margin-top: 20px;
+        }
         @media screen and (max-width: 1080px) {
           .container1 {
-            margin: 0 auto; /* 화면 중앙에 배치 */
-            width: 800px; /* 너비 */
+            margin: 0 auto;
+            width: 800px;
             background-color: #fff;
           }
           .Button {
@@ -172,13 +167,13 @@ export default function Home({
             text-decoration: none;
             color: cornflowerblue;
             font-size: 20px;
-            font-weight: 600; /* 글자 굵기 */
+            font-weight: 600;
           }
         }
         @media screen and (max-width: 720px) {
           .container1 {
-            margin: 0 auto; /* 화면 중앙에 배치 */
-            width: 500px; /* 너비 */
+            margin: 0 auto;
+            width: 500px;
             background-color: #fff;
           }
           .Button {
@@ -204,15 +199,14 @@ export default function Home({
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+            Droid Sans, Helvetica Neue, sans-serif;
         }
 
         * {
-          margin: 0; /* 마진 리셋 */
-          padding: 0; /* 패딩 리셋 */
-          box-sizing: border-box; /* 박스 영역은 테두리까지 */
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
         }
       `}</style>
     </div>
